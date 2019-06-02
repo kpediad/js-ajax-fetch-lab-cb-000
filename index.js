@@ -40,8 +40,8 @@ function createIssue() {
         Authorization: `token ${getToken()}`
       }
     }
-  );
-
+  ).then(res => getIssues());
+  
 }
 
 function getIssues() {
