@@ -41,7 +41,7 @@ function createIssue() {
       }
     }
   ).then(res => getIssues());
-  
+
 }
 
 function getIssues() {
