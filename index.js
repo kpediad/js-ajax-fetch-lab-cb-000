@@ -27,6 +27,21 @@ function showResults(json) {
 
 function createIssue() {
   //use this function to create an issue based on the values input in index.html
+  const issueTitle = document.getElementById('title').value;
+  const issueBody = document.getElementById('body').value;
+  const repo = 'kpediad/js-ajax-fetch-lab';
+  
+  fetch(
+    `https://api.github.com/repos/${repo}/issues`,
+    {
+      method: 'POST',
+      body: JSON.stringify({title: issueTitle, body: issueBody}),
+      headers: {
+        Authorization: `token ${getToken()}`
+      }
+    }
+  );
+  
 }
 
 function getIssues() {
