@@ -9,7 +9,7 @@ function forkRepo() {
   const owner = 'kpediad';
   //use fetch to fork it!
   fetch(
-    `https://api.github.com/repos/${owner}/${repo}/forks`,
+    `https://api.github.com/repos/${repo}/forks`,
     {
       method: 'POST',
       headers: {
