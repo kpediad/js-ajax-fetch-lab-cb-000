@@ -46,4 +46,23 @@ function createIssue() {
 
 function getIssues() {
   //once an issue is submitted, fetch all open issues to see the issues you are creating
+  const repo = 'kpediad/js-ajax-fetch-lab';
+
+  fetch(
+    `https://api.github.com/repos/${repo}/issues`,
+    {
+      headers: {
+        Authorization: `token ${getToken()}`
+      }
+    }
+  ).then(res => res.json())
+   .then(json => showIssues(json));
+
+}
+
+function showIssues(json) {
+  const issuesList = `<ul>${json
+    .map(issue => '<li><a href="' + issue.html_url + '">' + issue.title + '</a></li>')
+    .join('')}</ul>`;
+  document.getElementById('issues').innerHTML = issuesList;
 }
