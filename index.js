@@ -30,7 +30,7 @@ function createIssue() {
   const issueTitle = document.getElementById('title').value;
   const issueBody = document.getElementById('body').value;
   const repo = 'kpediad/js-ajax-fetch-lab';
-  
+
   fetch(
     `https://api.github.com/repos/${repo}/issues`,
     {
@@ -41,7 +41,7 @@ function createIssue() {
       }
     }
   );
-  
+
 }
 
 function getIssues() {
